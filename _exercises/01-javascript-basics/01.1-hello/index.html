@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../../00-common/bootstrap.min.css">
+	<link rel="stylesheet" href="../../00-common/highlight.min.css">
+	<link rel="stylesheet" href="../../00-common/common.css">
+
+	<title>Hello!</title>
+</head>
+
+<body>
+	<div class="container mt-4">
+		<div class="alert alert-secondary" role="alert">
+			<h1 class="display-4">Hello!!</h1>
+			<p class="lead">
+				Passen Sie das Programm von vorhin so an, dass ein von Ihnen frei gew&auml;hlter Grusstext in der aktuellen Browser-Sprache ausgegeben wird. Das Programm soll deutsch und englisch unterst&uuml;tzen - sofern der Browser in einer anderen Sprache konfiguiert ist, soll der englische Gruss ausgegeben werden.
+				<br/> Geben Sie das Resultat im untenstehenden Bereich "Ergebnis" aus.
+				
+			</p>
+			<p>
+				Hinweise:
+				<br/>
+				<ul>
+					<li>
+						<a href="https://htmlcheatsheet.com/js/" target="_blank">Javascript Cheat Sheet, Bereich "Basics"</a>
+					</li>
+					<li>
+						Verwenden Sie die in jedem Browser verf&uuml;gbare Variable <code>navigator.language</code>, um die aktuelle Browser-Sprache zu ermitteln. Geben Sie diesen Code einfach mal in der Konsole (F12 Developer Tools) ein - schauen Sie, was der Browser ausgibt!
+					</li>
+				</ul>
+			</p>
+		</div>
+
+		<div class="alert alert-primary" role="alert">
+			<h2>Ergebnis</h2>
+			<div id="result">
+				Hier soll das Ergebnis ausgegeben werden.
+			</div>
+		</div>
+
+		<div class="alert alert-success" role="alert">
+			<h2>Lösung:</h2>
+			<pre><code class="javascript" id="js-code"></code></pre>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="../../00-common/highlight.min.js"></script>
+	<script type="text/javascript" src="../../00-common/common.js"></script>
+
+	<script type="text/javascript" src="index.js"></script>
+
+</body>
+
+</html>
