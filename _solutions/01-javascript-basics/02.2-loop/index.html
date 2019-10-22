@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../../00-common/bootstrap.min.css">
+	<link rel="stylesheet" href="../../00-common/highlight.min.css">
+	<link rel="stylesheet" href="../../00-common/common.css">
+
+	<title>Verschlüsselung</title>
+</head>
+
+<body>
+	<div class="container mt-4">
+		<div class="alert alert-secondary" role="alert">
+			<h1 class="display-4">Verschlüsselung</h1>
+			<p class="lead">
+				Entwickeln Sie ein Programm zur Verschlüsselung eines Textes. <br/>
+				Ersetzen Sie jedes Zeichen im Text durch eine Zahl, die der Position des Zeichens in einem Key-String entspricht.<br/>
+				Der Key ist <code>ABCDEFGHIJKLMNOPQRSTUVWXYZ</code> <br/>
+				Zwischen den einzelnen Zahlen soll der Text "<code> - </code>" eingefügt werden. <br/>
+				Zeichen, die im Key-String nicht gefunden werden, sollen der Ausgabe unverändert hinzugefügt werden. <br/>
+				Geben Sie das Resultat wieder beim Element mit der Id <code>output</code> aus.
+			</p>
+			<p>
+				Hinweise:
+				<ul>
+					<li>Alle Zeichen in einem Text/String in Grossbuchstaben wandeln: <code>str.toUpperCase()</code>.</li>
+					<li>Ein Text ist ein Array, bestehend aus einzelnen Zeichen. Die Länge des Strings lässt sich mit <code>str.length</code> ermitteln.</li>
+					<li>Zugriff auf das dritte Zeichen in einem Text erfolgt mit <code>str[2]</code>.</li>
+				</ul>
+			</p>
+		</div>
+
+		<div class="alert alert-primary" role="alert">
+			<pre><code id="output" class="javascript">output hier!</code></pre>
+		</div>
+
+		<div class="alert alert-success" role="alert">
+			<h2>Lösung:</h2>
+			<pre><code class="javascript" id="js-code"></code></pre>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../00-common/highlight.min.js"></script>
+	<script type="text/javascript" src="../../00-common/common.js"></script>
+
+	<script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
