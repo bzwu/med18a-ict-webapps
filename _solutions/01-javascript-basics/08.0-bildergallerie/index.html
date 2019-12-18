@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../../00-common/bootstrap.min.css">
+	<link rel="stylesheet" href="../../00-common/highlight.min.css">
+	<link rel="stylesheet" href="../../00-common/common.css">
+
+	<title>DOM Events</title>
+
+	<style>
+		.preview-image {
+			width: calc(50% - 10px);
+			margin: 5px;
+			cursor: pointer;
+		}
+		.preview-image.selected {
+			outline: 4px solid rgb(214, 19, 133);
+		}
+		.preview-image:hover {
+			outline: 4px solid rgb(214, 214, 19);
+		}
+		.large-image {
+			width: 100%;
+			margin: 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container mt-4">
+		<div class="alert alert-secondary" role="alert">
+			<h1 class="display-4">Bildergallerie.</h1>
+			<p class="lead">
+				Suchen Sie sich im Internet einige Bilder, die Ihnen gefallen. Erstellen Sie in Ihrem Code ein Array, das alle Adressen auf diese Bilder als String enthält.
+				<br/>
+				Erstellen Sie für jedes der Bilder ein <code>img</code>-Tag als Unterelement von <code>div#preview-image-container</code>. Weisen Sie den so erstellten <code>img</code>-Tags die CSS-Klasse <code>preview-image</code> zu.
+				<br/>
+				Programmieren Sie eine Function <code>imagePreviewClickHandler</code>. Bei Klick auf oben erstellte <code>img</code>-Tags soll diese Funktion aufgerufen werden.
+				<br/>
+				In der Funktion soll das angeklickte Bild als grosses Bild angezeigt werden. Dazu muss das <code>src</code>-Attribute des Elements <code>img#large-image</code> mit dem Wert des <code>src</code>-Attributs des angeklickten Bildes (<code>this.src</code>) gesetzt werden.
+				<br/>
+				Hinweise:
+				<ul>
+					<li><a target="_blank" href="https://www.w3schools.com/jsref/met_node_appendchild.asp">Element als Unter-Element hinzufügen</a></li>
+					<li>Bei einem Element eine CSS-Klasse <a target="_blank" href="https://www.w3schools.com/howto/howto_js_add_class.asp">hinzufügen</a> / <a target="_blank" href="https://www.w3schools.com/howto/howto_js_remove_class.asp">enfernen</a>.</li>
+					<li><a target="_blank" href="https://www.w3schools.com/js/js_events.asp">Events allgemein</a></li>
+					<li><a target="_blank" href="https://www.w3schools.com/jsref/event_onclick.asp">Click-Event</a></li>
+				</ul>
+			</p>
+		</div>
+
+		<div class="alert alert-primary" role="alert">
+			<div class="form-group row">
+				<div class="col-sm-3" id="preview-image-container">
+				</div>
+				<div class="col-sm-9" id="large-image-container">
+					<img src="" id="large-image" class="large-image">
+				</div>
+			</div>			
+		</div>
+
+		<div class="alert alert-success" role="alert">
+			<h2>Lösung:</h2>
+			<pre><code class="javascript" id="js-code"></code></pre>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../00-common/highlight.min.js"></script>
+	<script type="text/javascript" src="../../00-common/common.js"></script>
+
+	<script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
