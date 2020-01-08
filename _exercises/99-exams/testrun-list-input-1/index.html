@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../../00-common/bootstrap.min.css">
+	<link rel="stylesheet" href="../../00-common/highlight.min.css">
+	<link rel="stylesheet" href="../../00-common/common.css">
+
+	<title>Auflistung von Werten</title>
+</head>
+
+<body>
+	<div class="container mt-4">
+		<div class="alert alert-secondary" role="alert">
+			<h1 class="display-4">Auflistung von Werten</h1>
+			<p class="lead">
+				Erstellen Sie ein Programm, über das in einem Eingabefeld Werte eingegeben werden können. Jeder eingegebene Wert soll in
+				einer Liste ausgegeben werden. 
+				<ul>
+					<li>Verwenden Sie <code>var entry = document.createElement('div')</code>, um die neuen Eintr&auml;ge zu erstellen</li>
+					<li>Verwenden Sie die Funktion <code>parent.appendChild(entry)</code> um das neue Element im DOM hinzuzuf&uuml;gen.</li>
+					<li>Weisen Sie den eingegebenen Text als Inhalt dem neu erstellten <code>div</code> hinzu (Verwenden Sie <code>entry.innerText = input.value</code></li>
+					<li>Stellen Sie sicher, dass nur ein neuer Eintrag erstellt wird, wenn auch ein Text eingegeben wurde.</li>
+					<li>Nach der &Uuml;bernahme des Texts in die Liste soll der Wert im Eingabefeld gel&ouml;scht werden (<code>input.value = ''</code>).</li>
+					<li>Nutzen Sie <code>inputField.focus()</code>, um den Cursor nach jeder Eingabe direkt ins Eingabefeld zu setzen.</li>
+				</ul>
+			</p>
+		</div>
+
+		<div class="alert alert-primary" role="alert">
+			<div class="form-group row">
+				<label class="col-sm-6 col-form-label">Bitte geben Sie eine Zahl oder einen Text ein:</label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" id="input" placeholder="Eingabe">
+				</div>
+				<div class="col-sm-3">
+					<button id="btn-submit" class="btn btn-primary float-right">Speichern</button>
+				</div>
+			</div>
+			<div id="value-list">
+				Hier erfolgt die Ausgabe der eingegebenen Werte...
+			</div>
+		</div>
+
+		<div class="alert alert-success" role="alert">
+			<h2>Lösung:</h2>
+			<pre><code class="javascript" id="js-code"></code></pre>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../00-common/highlight.min.js"></script>
+	<script type="text/javascript" src="../../00-common/common.js"></script>
+
+	<script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>

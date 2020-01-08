@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../../00-common/bootstrap.min.css">
+	<link rel="stylesheet" href="../../00-common/highlight.min.css">
+	<link rel="stylesheet" href="../../00-common/common.css">
+
+	<title>Auflistung von Werten</title>
+
+	<style>
+		.first-entry {
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container mt-4">
+		<div class="alert alert-secondary" role="alert">
+			<h1 class="display-4">Auflistung von Werten</h1>
+			<p class="lead">
+				Passen Sie das Programm von vorhin so an, dass...
+				<ul>
+					<li>neu eingegebene Werte immer zu oberst ausgegeben werden (Sortierung umkehren). Verwenden Sie dazu anstelle von <code>parent.appendChild</code> die Funktion <code>parent.insertBefore</code>.</li>
+					<li>der erste Wert immer fett dargestellt wird. Daf&uuml;r gibt es drei M&öglichkeiten:
+						<ol>
+							<li>Mittel Javascript: Setzen Sie <code>entry.style.fontWeight = 'bold'</code> bei jedem neu erstellten Eintrag. Beim zweitneusten Element muss der Inline-Style entfernt werden. Verwenden Sie dazu <code>parent.firstChild.style.fontWeight = 'normal'</code></li>
+							<li>Mittels Javascript + CSS: Erstellen Sie eine CSS-Klasse <code>first-entry</code> o.&auml; und f&uuml;gen Sie diese CSS-Klasse jedem neu erstellten Element in Javavscript hinzu. Beim zweitneusten Element muss die CSS-Klasse entfernt werden. Verwenden Sie dazu <code>parent.firstChild.classList.remove('first-entry')</code></li>
+							<li>Mittels CSS: Schreiben Sie CSS, dessen Selektor nur das erste Element in der Liste adressiert. </li>
+						</ol>
+					</li>
+				</ul>
+			</p>
+		</div>
+
+		<div class="alert alert-primary" role="alert">
+			<div class="form-group row">
+				<label class="col-sm-6 col-form-label">Bitte geben Sie eine Zahl oder einen Text ein:</label>
+				<div class="col-sm-3">
+					<input type="text" class="form-control" id="input" placeholder="Eingabe">
+				</div>
+				<div class="col-sm-3">
+					<button id="btn-submit" class="btn btn-primary float-right">Speichern</button>
+				</div>
+			</div>
+			<div id="value-list">
+				Hier erfolgt die Ausgabe der eingegebenen Werte...
+			</div>
+		</div>
+
+		<div class="alert alert-success" role="alert">
+			<h2>Lösung:</h2>
+			<pre><code class="javascript" id="js-code"></code></pre>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../00-common/highlight.min.js"></script>
+	<script type="text/javascript" src="../../00-common/common.js"></script>
+
+	<script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
