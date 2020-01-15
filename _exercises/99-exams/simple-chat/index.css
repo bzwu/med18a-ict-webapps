@@ -1,0 +1,14 @@
+.btn { margin-top: 10px; }
+.chat-msg {
+    margin-bottom: 10px;
+    border-bottom: 1px solid;
+}
+.chat-msg-style-red {
+    color: rgb(231, 93, 93);
+}
+.chat-msg-style-blue {
+    color: rgb(92, 89, 245);
+}
+.chat-msg-body {
+    font-weight: bold;
+}

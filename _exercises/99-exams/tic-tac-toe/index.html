@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../../00-common/bootstrap.min.css">
+	<link rel="stylesheet" href="../../00-common/highlight.min.css">
+	<link rel="stylesheet" href="../../00-common/common.css">
+	<link rel="stylesheet" href="./index.css">
+	<title>Tic Tac Toe</title>
+</head>
+
+<body>
+	<div class="container mt-4">
+		<div class="alert alert-secondary" role="alert">
+			<h1 class="display-4">Tic Tac Toe</h1>
+			<p class="lead" >
+				Programmieren Sie das Spiel Tic Tac Toe!
+				<ul id="requirements">
+					<li>Spieler 1 spielt mit dem Zeichen <code>X</code>. Für diesen Zweck wurde im Code bereits eine globale Variable <code>player1</code> definiert. Ändern Sie diese Variable nicht.</li>
+					<li>Spieler 2 spielt mit dem Zeichen <code>O</code>. Für diesen Zweck wurde im Code bereits eine globale Variable <code>player2</code> definiert. Ändern Sie diese Variable nicht.</li>
+					<li>Bei jedem Klick auf ein Feld... 
+						<ul>
+							<li>wird das Zeichen des aktuellen Spielers in dieses Feld gesetzt. Dies wird erreicht, indem das entsprechende Zeichen für den aktuellen Spieler (<code>X</code> bzw. <code>O</code>) der Eigenschaft <code>innerText</code> des angeklickten <code>div</code> zugewiesen wird.</li>
+							<li>wird der aktuelle Spieler gewechselt.</li>
+							<li>wird jedoch nichts gemacht, falls das Feld bereits besetzt ist (d.h. also wenn <code>innerText.length > 0</code>).</li>
+						</ul> 
+					</li>
+					<li>Als "Container"-Element für das Spielfeld dient das im HTML-Code bereits vorhandene <code>div</code>-Element mit der ID <code>tic-tac-toe</code>. </li>
+					<li>Das Spielfeld soll aus 9 Feldern bestehen und muss von Ihnen programmatisch erzeugt werden (d.h. also ein <code>div</code>-Element innerhalb einer <code>for</code>-Schleife erstellen, die 9mal durchlaufen wird.).</li>
+					<li>Ein einzelnes Feld soll ein <code>div</code>-Element mit zugewiesener CSS-Klasse <code>tic-tac-toe-cell</code> sein. 
+					<li>Die im Code bereits vorhandene Funktion <code>tryGetWinner</code> ermittelt, ob einer der Spieler gewonnen hat - diese Funktion ist bereits im Code vorhanden und muss von Ihnen lediglich korrekt eingebunden werden. Machen Sie also keine Änderung an dieser Funktion, sondern rufen Sie sie lediglich auf.</li>
+					<li><code>tryGetWinner</code> gibt einen Leerstring zurück, wenn kein Gewinner gefunden wurde. Wenn aber ein Gewinner vorhanden ist, wird das jeweilige Zeichen <code>X</code> oder <code>O</code> zurück gegeben.</li>
+					<li>Wurde einer der Spieler als Sieger erkannt, soll 
+						<ul>
+							<li>ein Text im <code>div</code>-Element mit der ID <code>winner-msg</code> angezeigt werden. Im Text muss ersichtlich sein, welcher Spieler bzw. welches Zeichen gewonnen hat</li>
+							<li>ein Klick auf eines der Felder keine Wirkung mehr haben - der Klick-Event soll also ignoriert oder verhindert werden.</li>
+						</ul>
+					</li>
+					<li>Es darf keine Änderung am HTML-Code gemacht werden.</li>
+				</ul>
+			</p>
+			<button class="btn btn-primary" id="requirementsToggler"></button>
+		</div>
+ 
+		<div id="btn-container" class="alert alert-secondary" role="alert">
+			<div id="winner-msg"></div>
+			<div id="tic-tac-toe"></div>
+		</div>
+
+		<div class="alert alert-success" role="alert">
+			<h2>Lösung:</h2>
+			<pre><code class="javascript" id="js-code"></code></pre>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../00-common/highlight.min.js"></script>
+	<script type="text/javascript" src="../../00-common/common.js"></script>
+
+	<script type="text/javascript" src="index.js"></script>
+	<script>
+		var requirements = document.getElementById('requirements')
+		requirements.style.overflow = 'hidden';
+		var requirementsToggler = document.getElementById('requirementsToggler');
+		var requirementsMode = sessionStorage.getItem('requirementsMode') ? sessionStorage.getItem('requirementsMode'): 'visible';
+		handlerequirementsMode(requirementsMode);
+		requirementsToggler.addEventListener('click', function() {
+			requirementsMode = requirementsMode == 'visible' ? 'hidden': 'visible';
+			handlerequirementsMode(requirementsMode);
+		})
+		function handlerequirementsMode(requirementsMode) {
+			requirements.style.display = requirementsMode == 'visible'? 'inherit': 'none';
+			requirementsToggler.innerText = 'Anforderungsbeschreibung ' + (requirementsMode =='visible'? 'ausblenden': "einblenden");
+			sessionStorage.setItem('requirementsMode', requirementsMode);
+		}
+	</script>
+</body>
+
+</html>

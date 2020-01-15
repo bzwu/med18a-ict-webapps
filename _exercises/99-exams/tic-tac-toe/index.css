@@ -1,0 +1,38 @@
+
+#winner-msg {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+}
+#tic-tac-toe {
+    overflow: hidden;
+    height: auto;
+    border: 1px solid;
+    width: 450px;
+    margin: auto;
+}
+.tic-tac-toe-cell {
+    float: left;
+    border: 1px solid white;
+    position: relative;
+    cursor: pointer;
+    width: 33.333333%;
+    display: block;
+    line-height: 150px;
+    padding-top: calc((33.333333% - 150px) / 2);
+    padding-bottom: calc((33.333333% - 150px) / 2);
+    text-align: center;
+    font-size: 110px;
+    height: 150px;
+}
+.tic-tac-toe-cell:before, .tic-tac-toe-cell:after {
+    content: ' ';
+    white-space: pre;
+}
+
+.tic-tac-toe-cell:hover {
+    border: 1px solid yellow;
+}
+.tic-tac-toe-cell.highlighted {
+    border: 1px solid red;
+}

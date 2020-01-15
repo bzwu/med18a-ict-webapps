@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../../00-common/bootstrap.min.css">
+	<link rel="stylesheet" href="../../00-common/highlight.min.css">
+	<link rel="stylesheet" href="../../00-common/common.css">
+	<link rel="stylesheet" href="./index.css">
+
+	<title>Einfacher Chat</title>
+</head>
+
+<body>
+	<div class="container mt-4">
+		<div class="alert alert-secondary" role="alert">
+			<h1 class="display-4">Einfacher Chat</h1>
+			<p class="lead" >
+				<ul id="requirements">
+					<li>Programmieren Sie einen einfachen Chat. Entnehmen Sie das geforderte Verhalten der <a href="description.pdf" target="_blank">Beschreibung </a>.</li>
+					<li>Stellen Sie sicher, dass beim Klicken auf den jeweiligen Button "Versenden" eine neue Chat-Meldung unten im Chat-Verlauf hinzugefügt wird. </li>
+					<li>Chat-Meldungen sind Kind-Elemente des <code>div</code> mit der ID <code>chat-area</code>. Dieses <code>div</code> ist bereits im HTML enthalten.</li>
+					<li>Das geforderte HTML-Fragment, das eine Chat-Meldung darstellt, entnehmen Sie bitte der Beschreibung. Dieses HTML-Fragment muss von Ihnen genau so für jede neue Chat-Message programmatisch erzeugt werden.</li>
+					<li>Nach Absenden einer Meldung soll der Name, der Style und die Nachricht aus den entsprechenden Feldern gelesen werden (die Eingabe-Elemente verfügen bereits über eindeutige IDs, sie enthalten eine 1 beim Chatpartner 1 und eine 2 beim Chatpartner 2.</li>
+					<li>Der Wert des Dropdown-Elements "Style" (also Attribut <code>value</code>) entspricht grade der CSS-Klasse, die dem <code>div</code> einer Chat-Message hinzugefügt werden muss.</li>
+					<li>Der Inhalt des Feldes "Nachricht" soll nach dem Absenden gelöscht werden, sodass wieder eine neue Meldung eingegeben werden kann. </li>
+					<li>Um die aktuelle Zeit zu beschaffen, können Sie die im JS-File bereits vorhandene Funktion <code>getCurrentTime()</code> verwenden.</li>
+					<li>Am HTML Markup dieser index.html darf keine Änderung vorgenommen werden.</li>
+				</ul>
+				<button class="btn btn-primary" id="requirementsToggler"></button>
+			</p>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="alert alert-primary" role="alert">
+					<h2 class="display-6">Chatpartner 1</h2>
+					Name:
+					<input type="text" class="form-control" id="chatPartner1">
+					Style: 
+					<select class="style-selector form-control" id="style1">
+						<option value="" disabled selected></option>
+						<option value="chat-msg-style-red">Rot</option>
+						<option value="chat-msg-style-blue">Blau</option>
+					</select>
+					Nachricht:
+					<textarea rows="3" class="form-control" id="msg1"></textarea>
+					<button id="sendBtn1" class="btn btn-primary">Versenden</button>
+				</div>
+
+			</div>
+			<div class="col-sm-6">
+				<div class="alert alert-primary" role="alert">
+					<h2 class="display-6">Chatpartner 2</h2>
+					Name:
+					<input type="text" class="form-control" id="chatPartner2">
+					Style: 
+					<select class="style-selector form-control" id="style2">
+						<option value="" disabled selected></option>
+						<option value="chat-msg-style-red">Rot</option>
+						<option value="chat-msg-style-blue">Blau</option>
+					</select>
+					Nachricht:
+					<textarea rows="3" class="form-control" id="msg2"></textarea>
+					<button id="sendBtn2" class="btn btn-primary">Versenden</button>
+				</div>
+			</div>
+		</div>
+		<div class="alert alert-primary" role="alert">
+			<h2 class="display-6">Chatverlauf</h2>
+			<div id="chat-area">
+			</div>
+		</div>
+
+		<div class="alert alert-success" role="alert">
+			<h2>Lösung:</h2>
+			<pre><code class="javascript" id="js-code"></code></pre>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../00-common/highlight.min.js"></script>
+	<script type="text/javascript" src="../../00-common/common.js"></script>
+
+	<script type="text/javascript" src="index.js"></script>
+
+	<script> 
+		function handlerequirementsMode(requirementsMode) {
+			requirements.style.display = requirementsMode == 'visible'? 'inherit': 'none';
+			requirementsToggler.innerText = 'Anforderungsbeschreibung ' + (requirementsMode =='visible'? 'ausblenden': "einblenden");
+			sessionStorage.setItem('requirementsMode', requirementsMode);
+		}
+		var requirements = document.getElementById('requirements')
+		requirements.style.overflow = 'hidden';
+		var requirementsToggler = document.getElementById('requirementsToggler');
+		var requirementsMode = sessionStorage.getItem('requirementsMode') ? sessionStorage.getItem('requirementsMode'): 'visible';
+		handlerequirementsMode(requirementsMode);
+		requirementsToggler.addEventListener('click', function() {
+			requirementsMode = requirementsMode == 'visible' ? 'hidden': 'visible';
+			handlerequirementsMode(requirementsMode);
+		})
+		
+	</script>
+</body>
+
+</html>
