@@ -1,8 +1,7 @@
 export class Person {
-    constructor(name, birthdate, gender) {
+    constructor(name, ageInYears, gender) {
         this.name = name;
-        let currentDate = new Date();
-        this.age = currentDate.getFullYear() - birthdate.getFullYear();
+        this.age = ageInYears;
         this.gender = gender;
     }
 

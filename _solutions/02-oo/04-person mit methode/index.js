@@ -1,5 +1,4 @@
 import { Person } from './person.js';
 
-let birthday = new Date(1999, 8, 12);
-let sylvia = new Person("Sylvia", birthday, "weiblich");
+let sylvia = new Person("Sylvia", 19, "weiblich");
 document.getElementById("result-text").value = sylvia.sayHello();
