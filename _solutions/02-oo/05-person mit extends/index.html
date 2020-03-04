@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../../00-common/bootstrap.min.css">
+	<title>OOP Vererbung</title>
+</head>
+
+<body>
+	<div class="container mt-4">
+		<div class="alert alert-secondary" role="alert">
+			<h1 class="display-4">OOP Vererbung</h1>
+			<p class="lead" >
+				Erstellen Sie zwei Klassen <code>Male</code> und <code>Female</code>. 
+				Diese beiden Klassen sollen von <code>Person</code> erben.
+				<br/>
+				Im Konstruktor der neuen Klassen soll auch der Konstruktor von <code>Person</code> aufgerufen werden.
+				<br/>
+				In den neuen Klassen soll jeweils die Methode <code>sayHello</code> überschrieben werden, sodass die <code>if</code>-Anweisung in der <code>sayHello</code>-Methode der Klasse <code>Person</code> entfällt.
+				<br/>
+				Passen Sie danach den Code in <code>index.js</code> so an, dass ein Female oder Male-Objekt erstellt wird und wieder derselbe Text in die Ausgabe geschrieben wird.
+				<ul>
+					<li><a target="_blank" href="https://www.w3schools.com/js/js_classes.asp">Doku zu Vererbung</a></li>
+				</ul>
+			</p>
+		</div>
+ 
+		<div class="alert alert-secondary" role="alert">
+			<div class="form-group row">
+				<div class="col-sm-12">
+					<input type="text" class="form-control" readonly id="result-text" placeholder="Hier soll der Name der Person ausgegeben werden" class="input">
+				</div>			
+			</div>
+		</div>
+	</div>
+
+	<script type="module" src="index.js"></script>
+	
+</body>
+
+</html>
