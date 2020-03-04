@@ -6,7 +6,13 @@ export class Person {
     }
 
     sayHello() {
-        return `Hallo, ich heisse ${this.name} und bin ${this.age} Jahre alt.`;
+        if (this.gender == "männlich") {
+            return `Hallo, ich bin ein Mann, ${this.age} Jahre alt und heisse ${this.name}.`;
+        }
+        if (this.gender == "weiblich") {
+            return `Hallo, ich bin eine Frau, ${this.age} Jahre alt und heisse ${this.name}.`;
+        }
+        return `Hallo, ich heisse ${this.name}, bin ${this.age} Jahre alt und weder Mann noch Frau.`;
     }
 }
 
