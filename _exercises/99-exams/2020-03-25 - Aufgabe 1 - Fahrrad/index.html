@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../../00-common/bootstrap.min.css">
+	<link rel="stylesheet" href="../../00-common/highlight.min.css">
+	<link rel="stylesheet" href="../../00-common/common.css">
+	<title>Aufgabe 1 - Fahrrad</title>
+</head>
+
+<body>
+	<div class="container mt-4">
+		<div class="alert alert-secondary" role="alert">
+			<h1 class="display-4">Aufgabe 1 - Fahrrad - 6 Punkte</h1>
+			<p class="lead" >
+				<ul id="requirements">
+					<li>Gegegeben ist untenstehende Klasse eines Fahrrads. Studieren Sie zunächst diesen Code.</li>
+					<li>Erweitern Sie dann das Programm folgendermassen:
+						<ul>
+							<li>Beim Erstellen einer Fahrrad-Instanz soll immer angegeben werden müssen, wieviele Gänge dieses Fahrrad besitzt.</li>
+							<li>Wenn der aktuelle Gang verändert wird (mittels Aufruf der Methode <code>schalten</code>), muss verhindert werden, dass ungültige Gänge eingestellt werden: 
+								Der aktuelle Gang muss also immer mindestens 1 sein und darf die max. Anzahl Gänge, die bei der Erstellung des Fahrrads angegeben wurde, nie überschreiten.</li>
+						</ul>
+					</li>
+				</ul>
+			</p>
+			<button class="btn btn-primary" id="requirementsToggler"></button>
+		</div>
+
+		<div class="alert alert-success" role="alert">
+			<h2>Lösung:</h2>
+			<pre><code class="javascript" id="js-code"></code></pre>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../00-common/highlight.min.js"></script>
+	<script type="text/javascript" src="../../00-common/common.js"></script>
+
+	<script type="text/javascript" src="index.js"></script>
+	<script>
+		var requirements = document.getElementById('requirements')
+		requirements.style.overflow = 'hidden';
+		var requirementsToggler = document.getElementById('requirementsToggler');
+		var requirementsMode = sessionStorage.getItem('requirementsMode') ? sessionStorage.getItem('requirementsMode'): 'visible';
+		handlerequirementsMode(requirementsMode);
+		requirementsToggler.addEventListener('click', function() {
+			requirementsMode = requirementsMode == 'visible' ? 'hidden': 'visible';
+			handlerequirementsMode(requirementsMode);
+		})
+		function handlerequirementsMode(requirementsMode) {
+			requirements.style.display = requirementsMode == 'visible'? 'inherit': 'none';
+			requirementsToggler.innerText = 'Anforderungsbeschreibung ' + (requirementsMode =='visible'? 'ausblenden': "einblenden");
+			sessionStorage.setItem('requirementsMode', requirementsMode);
+		}
+	</script>
+</body>
+
+</html>

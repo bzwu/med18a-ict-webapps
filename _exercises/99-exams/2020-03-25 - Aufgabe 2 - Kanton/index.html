@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../../00-common/bootstrap.min.css">
+	<link rel="stylesheet" href="../../00-common/highlight.min.css">
+	<link rel="stylesheet" href="../../00-common/common.css">
+	<title>Aufgabe 2 - Kanton</title>
+</head>
+
+<body>
+	<div class="container mt-4">
+		<div class="alert alert-secondary" role="alert">
+			<h1 class="display-4">Aufgabe 2 - Kanton - 6 Punkte</h1>
+			<p class="lead" >
+				<ul id="requirements">
+					<li>Studieren Sie das Programm in index.js File.</li> 
+					<li>Die Klasse <code>Kanton</code> besitzt vier Methoden aktion1, aktion2, aktion3, aktion4 – recht aussagelose Namen für Methoden. Bestimmen Sie für jede der Methoden einen sinnvollen, beschreibenden Namen, der zur Funktionaltität / Code innerhalb dieser Methoden passt.</li>
+					<li>Passen Sie also den bestehenden Code so an, dass die Methodennamen sinnvoll sind und die Verwendung korrekt ist.</li>
+				</ul>
+			</p>
+			<button class="btn btn-primary" id="requirementsToggler"></button>
+		</div>
+
+		<div class="alert alert-success" role="alert">
+			<h2>Lösung:</h2>
+			<pre><code class="javascript" id="js-code"></code></pre>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../00-common/highlight.min.js"></script>
+	<script type="text/javascript" src="../../00-common/common.js"></script>
+
+	<script type="text/javascript" src="index.js"></script>
+	<script>
+		var requirements = document.getElementById('requirements')
+		requirements.style.overflow = 'hidden';
+		var requirementsToggler = document.getElementById('requirementsToggler');
+		var requirementsMode = sessionStorage.getItem('requirementsMode') ? sessionStorage.getItem('requirementsMode'): 'visible';
+		handlerequirementsMode(requirementsMode);
+		requirementsToggler.addEventListener('click', function() {
+			requirementsMode = requirementsMode == 'visible' ? 'hidden': 'visible';
+			handlerequirementsMode(requirementsMode);
+		})
+		function handlerequirementsMode(requirementsMode) {
+			requirements.style.display = requirementsMode == 'visible'? 'inherit': 'none';
+			requirementsToggler.innerText = 'Anforderungsbeschreibung ' + (requirementsMode =='visible'? 'ausblenden': "einblenden");
+			sessionStorage.setItem('requirementsMode', requirementsMode);
+		}
+	</script>
+</body>
+
+</html>
