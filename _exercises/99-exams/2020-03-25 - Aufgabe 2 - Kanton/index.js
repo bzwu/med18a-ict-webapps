@@ -3,11 +3,11 @@ class Kanton {
         this.staedte = staedte;
     }
 
-    getAnzahlStaedte() {
+    aktion1() {
         return this.staedte.length;
     }
 
-    getGroessteStadt() {
+    aktion2() {
         let stadt = this.staedte[0];
         for (let i=0; i<this.staedte.length; i++) {
             if (this.staedte[i].einwohner > stadt.einwohner) {
@@ -17,7 +17,7 @@ class Kanton {
         return stadt;
     }
 
-    getAnzahlEinwohner() {
+    aktion3() {
         let resultat = 0;
         for (let i=0; i<this.staedte.length; i++) {
             resultat = resultat + this.staedte[i].einwohner;
@@ -25,7 +25,7 @@ class Kanton {
         return resultat;
     }
 
-    istStadtEnthalten(stadt) {
+    aktion4(stadt) {
         let resultat = false;
         for (let i=0; i<this.staedte.length; i++) {
             if (this.staedte[i].name == stadt.name) {
@@ -48,8 +48,8 @@ let stgallen = new Stadt("St. Gallen", 85000);
 let zurich = new Stadt("Zürich", 500000);
 let staedte = [wil, gossau, stgallen];
 let kantonsg = new Kanton(staedte);
-console.log(kantonsg.getAnzahlStaedte());
-console.log(kantonsg.getGroessteStadt());
-console.log(kantonsg.getAnzahlEinwohner());
-console.log(kantonsg.istStadtEnthalten(zurich));
+console.log(kantonsg.aktion1());
+console.log(kantonsg.aktion2());
+console.log(kantonsg.aktion3());
+console.log(kantonsg.aktion4(zurich));
 
