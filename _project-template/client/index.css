@@ -1,0 +1,55 @@
+#pizza-list {
+    display: none;
+}
+#pizza-list.loaded {
+    display: inherit;
+}
+#content-area #pizza-details {
+    display: none;
+}
+#content-area #no-pizza-details {
+    display: inherit;
+}
+#content-area.has-selected-pizza #pizza-details {
+    display: inherit;
+}
+#content-area.has-selected-pizza #no-pizza-details {
+    display: none;
+}
+
+#pizza-list .table tr {
+    cursor: pointer;
+}
+#pizza-list .table tr.selected {
+    background: #666;
+    color: #fff;
+}
+h2 {
+    margin-top: 30px;
+}
+button {
+    margin-right: 15px;
+}
+
+#transparent-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #666;
+    opacity: 0.3;
+    display: none;
+}
+#add-history-entry-container {
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    left: calc(50% - 250px);
+    top: calc(50% - 150px);
+    background: #fff;
+    display: none;
+}
+#add-history-entry-container.visible, #transparent-background.visible {
+    display: inherit;
+}
